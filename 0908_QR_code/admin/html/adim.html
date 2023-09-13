@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>프로토타입</title>
+    <link rel="stylesheet" href="../Assets/css/manage.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            /* 스크롤바 제거 */
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4,
+        .box5 {
+            padding: 0;
+            margin: 0;
+            height: auto;
+        }
+
+        .content p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .special-text {
+            color: red;
+            font-size: 55px !important;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 18.72px;
+            padding-left: 20px;  /* 左側のパディングを20pxに設定 */
+        }
+        h3{
+            padding-left: 20px;  /* 左側のパディングを20pxに設定 */
+        }
+        .indicator {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header
+        style="background-color: #555; padding: 20px; height: 5vh; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <h1 style="color: white;">Auto-Space Prototype</h1>
+    </header>
+    <div id="menu">
+        <ul>
+            <li><a href="#" id="mainCamera">중앙 카메라</a></li>
+            <li><a href="#" id="stageLeft">무대 좌측</a></li>
+            <li><a href="#" id="stageRight">무대 우측</a></li>
+            <li><a href="#" id="gate1">GATE 1</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <!-- Box Container -->
+        <div class="box-container">
+            <!-- Box 1 - Google Maps -->
+            <div class="box1">
+                <h2>카메라 위치</h2>
+                <div id="map1" style="width: 100%; height: 30vh;"></div>
+            </div>
+            <!-- Box 2 - Webcam -->
+            <div class="box2">
+                <h2>카메라</h2>
+                <video id="video9" autoplay loop controls style="width: 100%; height: 30vh;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <!-- Bottom Box Container -->
+        <div class="bottom-box-container">
+            <div class="box3">
+                <h3>밀집도 변화</h3>
+                <canvas id="myChart" style="width: 100%; height: 30vh;"></canvas>
+            </div>
+            <div class="box4">
+                <h3>해당 구역 현황</h3>
+                <div class="indicator" id="indicator1">1㎡내에 6명이 있습니다.</div>
+                <div class="indicator" id="indicator2">1㎡내에 5명이 있습니다.</div>
+                <div class="indicator" id="indicator3">1㎡내에 4명이 있습니다.</div>
+                <div class="indicator" id="indicator4">1㎡내에 3명이 있습니다.</div>
+                <div class="indicator" id="indicator5">1㎡내에 2명이 있습니다.</div>
+            </div>
+            <div class="box5">
+                <h2>경고</h2>
+                <div class="content">
+                    <p>인구 밀집도</p>
+                    <p class="special-text">80%</p>
+                    <p>입장에 주의가 필요합니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- JavaScript 부분 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDHRE3ulzDIKe5suArGPq5_bAJ2A2wcmwM&libraries=visualization&callback=initMap"
+    async defer></script>
+<script src="../Assets/js/admin.js"></script>
+<script src="../Assets/js/chart.js"></script>
+
+</html>
