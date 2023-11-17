@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>auto spaces</title>
+    <link rel="stylesheet" href="../assets/css/Ticket_check_styles.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="link-container">
+        <div id="user_link">
+            <img src="../assets/img/account.svg" alt="아이콘01" />
+            <span class="user_text">홍길동</span>
+        </div>
+        <div id="alarm_link">
+            <img src="../assets/img/bell-dot.svg" alt="아이콘02" />
+        </div>
+    </div>
+    <!-- 同意が必要なdiv -->
+    <div class="consent-box">
+        <h2>티켓 번호를 입력하세요.</h2>
+
+        <form id="ticket-form">
+            <input type="text" id="ticket-number" placeholder="티켓 번호 10짜리" required>
+            <button type="submit" id="save-ticket" onclick="location.href='QR_certification.html'">정송</button>
+            <!-- <div id="fish_link" onclick="location.href='fish_map.html'"></div> -->
+        </form>
+
+    </div>
+
+
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 19,
+                center: { lat: 37.5191503, lng: 127.1273644 },
+                disableDefaultUI: true,
+            });
+        }
+        // フォームのsubmitイベントにリスナーを設定
+        document.getElementById('ticket-form').addEventListener('submit', function (event) {
+            // フォームのデフォルトの送信動作をキャンセル
+            event.preventDefault();
+
+            // 入力されたチケット番号を取得
+            const ticketNumber = document.getElementById('ticket-number').value;
+
+            // チケット番号をlocalStorageに保存
+            localStorage.setItem('ticketNumber', ticketNumber);
+
+            // 保存完了メッセージまたは次のページへの遷移（ここではアラートを表示）
+            alert('티켓 번호를 인증 했습니다');
+
+            // 同意ページにリダイレクト（必要に応じて）
+            // window.location.href = "consent.html";
+        });
+    </script>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAMkNqy8UIL4xN40FbTVE5zYC0ucq8Mtw&callback=initMap" async
+    defer></script>
+
+</html>

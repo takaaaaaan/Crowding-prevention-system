@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>auto spaces</title>
+    <link rel="stylesheet" href="../assets/css/QR_certification_styles.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="link-container">
+        <div id="user_link">
+            <img src="../assets/img/account.svg" alt="아이콘01" />
+            <span class="user_text">홍길동</span>
+        </div>
+        <div id="alarm_link">
+            <img src="../assets/img/bell-dot.svg" alt="아이콘02" />
+        </div>
+    </div>
+    <!-- 同意が必要なdiv -->
+    <div class="consent-box">
+        <h1>Auto spaces</h1>
+        <div class="consent-text">
+            이용 약관의 내용을 여기에 기술하십시오.<br>
+            이용 약관의 내용을 여기에 기술하십시오.<br>
+            이용 약관의 내용을 여기에 기술하십시오.<br>
+            계속...
+        </div>
+        <p>
+            <input type="checkbox" id="consent-checkbox">
+            이용 약관에 동의하십시오.
+        </p>
+        <button id="agree-button" disabled>동의하기</button>
+    </div>
+
+    <script src="../assets/js/QR_certification_index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAMkNqy8UIL4xN40FbTVE5zYC0ucq8Mtw&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
