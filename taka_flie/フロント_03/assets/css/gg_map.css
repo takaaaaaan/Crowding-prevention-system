@@ -79,21 +79,25 @@
   flex: 0 0 auto;
   width: 30%;
 }
+.col-lg-18 {
+  flex: 0 0 auto;
+  width: 45%;
+}
 .col-lg-15 {
   flex: 0 0 auto;
   width: 50%;
-}
-.col-lg-16 {
-  flex: 0 0 auto;
-  width: 70%;
 }
 .col-lg-17 {
   flex: 0 0 auto;
   width: 55%;
 }
-.col-lg-18 {
+.col-lg-16 {
   flex: 0 0 auto;
-  width: 45%;
+  width: 70%;
+}
+.col-lg-19 {
+  flex: 0 0 auto;
+  width: 80%;
 }
 .hi{
   height: 960px;
