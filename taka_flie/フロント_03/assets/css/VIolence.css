@@ -1,0 +1,8 @@
+.new-container {
+  width: 100%;
+  display: flex;
+  margin-left: 50px;
+}
+.container_02{
+  display: flex;
+}

@@ -1,0 +1,71 @@
+#componentBox, #chartBox {
+  padding: 2%;
+  background-color: rgb(255, 250, 245);
+}
+
+#columnChartEE {
+  height: 10px;
+}
+
+.col-lg-13 {
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+/* 기존의 keyframes에 추가 */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-in-bottom {
+  animation: 1.0s ease-out 0s 1 slideInFromBottom;
+}
+
+.slide-in-left {
+  animation: 1.0s ease-out 0s 1 slideInFromLeft;
+}
+
+.slide-in-top {
+  animation: 1.0s ease-out 0s 1 slideInFromTop;
+}
+
+
+/* 부모 요소 안에서만 애니매이션이 동작되도록 */
+.parent-element {
+  overflow: hidden;
+  flex-wrap: wrap; /* 여러 항목이 있는 경우 접기 */
+  align-items: stretch; /* 모든 자식 요소를 상위 요소와 같은 높이로 만듭니다 */
+}
+
+.recent-sales {
+  height: 95.5%;
+}
+
+
+
+

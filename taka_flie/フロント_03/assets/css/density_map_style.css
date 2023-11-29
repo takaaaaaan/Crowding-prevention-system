@@ -51,7 +51,4 @@
 /* 부모 요소 안에서만 애니매이션이 동작되도록 */
 .parent-element {
   overflow: hidden;
-  display: flex; /* Flexコンテナを有効にする */
-  flex-wrap: wrap; /* 複数のアイテムがある場合に折り返す */
-  align-items: stretch; /* すべての子要素を親要素と同じ高さにする */
 }

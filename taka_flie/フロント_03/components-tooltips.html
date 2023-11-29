@@ -30,26 +30,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/density_map_style.css" rel="stylesheet">
 
-  <!-- 우리팀 CSS -->
-  <link href="assets/css/gg_map.css" rel="stylesheet">
-  <!-- map link -->
-  <link rel="stylesheet" href="input_html/css/map_styles.css"> <!-- CSSのリンクを追加（必要であれば） -->
-  <!-- <link rel="stylesheet" href="input_html/css/snazzy-info-window.min.css"> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx1xUEgJ3-t-NUb5kiXgFTysReX_BVf4c&callback=initMap"></script>
-  <!-- <script src="input_html/js/snazzy-info-window.min.js"></script> -->
-  <script src="input_html/js/map_scripts_밀집도.js"></script>
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- 추가한 CSS 파일 -->
+  <link href="assets/css/density/density_map_style.css" rel="stylesheet">
+  <link href="assets/css/density/gg_map.css" rel="stylesheet">
+  <link href="assets/css/density/map_styles.css" rel="stylesheet"> <!-- CSSのリンクを追加（必要であれば） -->
+
 </head>
 
 <body>
@@ -467,9 +454,8 @@
       <div class="card" id="componentBox">
 
         <div class="row">
-          <!-- Left side columns -->
-          <div class="col-lg-14 parent-element">
-
+          <!-- Left side 상세위치 -->
+          <div class="col-lg-14">
             <!-- News & Updates Traffic -->
             <div class="card" id="loactionBox">
               <div class="filter">
@@ -500,10 +486,6 @@
                     <div class="mini-box">BOX</div>
                     <div class="mini-box">BOX</div>
                     <div class="mini-box">BOX</div>
-                    <div class="mini-box">BOX</div>
-                    <div class="mini-box">BOX</div>
-                    <div class="mini-box">BOX</div>
-                    <div class="mini-box">BOX</div>
                   </div>
                   <button class="slide-btn next-btn">＞</button>
                 </div>
@@ -524,7 +506,6 @@
                 <table class="table table-borderless datatable">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
                       <th scope="col">위치</th>
                       <th scope="col">인구</th>
                       <th scope="col">밀도<br>(m²당)</th>
@@ -533,21 +514,18 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
                       <td><a href="#">센트럴 파크</a></td>
                       <td>35</td>
                       <td>0.5</td>
                       <td><span class="badge bg-success">정상</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">2</th>
                       <td><a href="#">메인 스트리트</a></td>
                       <td>50</td>
                       <td>1.2</td>
                       <td><span class="badge bg-warning">주의</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">3</th>
                       <td><a href="link-to-camera3">기차역</a></td>
                       <td>80</td>
                       <td>2.0</td>
@@ -555,49 +533,48 @@
                     </tr>
                     <!-- 追加の行 -->
                     <tr>
-                      <th scope="row">4</th>
                       <td><a href="link-to-camera4">공원</a></td>
                       <td>45</td>
                       <td>1.0</td>
                       <td><span class="badge bg-success">정상</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">5</th>
                       <td><a href="link-to-camera5">도서관</a></td>
                       <td>30</td>
                       <td>0.8</td>
                       <td><span class="badge bg-warning">주의</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">6</th>
                       <td><a href="link-to-camera6">상업 지구</a></td>
                       <td>70</td>
                       <td>1.5</td>
                       <td><span class="badge bg-danger">위험</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">7</th>
                       <td><a href="link-to-camera7">병원</a></td>
                       <td>20</td>
                       <td>0.4</td>
                       <td><span class="badge bg-success">정상</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">8</th>
                       <td><a href="link-to-camera8">학교</a></td>
                       <td>55</td>
                       <td>1.3</td>
                       <td><span class="badge bg-warning">주의</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">9</th>
                       <td><a href="link-to-camera9">시장</a></td>
                       <td>65</td>
                       <td>1.7</td>
                       <td><span class="badge bg-danger">위험</span></td>
                     </tr>
                     <tr>
-                      <th scope="row">10</th>
+                      <td><a href="link-to-camera10">해변</a></td>
+                      <td>40</td>
+                      <td>0.9</td>
+                      <td><span class="badge bg-success">정상</span></td>
+                    </tr>
+                    <tr>
                       <td><a href="link-to-camera10">해변</a></td>
                       <td>40</td>
                       <td>0.9</td>
@@ -607,16 +584,17 @@
                 </table>
 
                 <!-- End sidebar recent posts-->
-
               </div>
             </div><!-- End News & Updates -->
-
           </div><!-- End Left side columns -->
 
-          <div class="col-lg-13 parent-element">
-            <div class="card">
+
+          <!-- Left side 지역 -->
+          <div class="col-lg-13">
+
+            <div class="card" id="regionBox">
               <div class="card-body ">
-                <h5 class="card-title">지역 <span>| Today</span></h5>
+                <h5 class="card-title">행정동 <span>| Today</span></h5>
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -639,53 +617,58 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a href="#" class="rotate-text">경기</a></td>
+                      <td><a href="#" class="rotate-text">탕정면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">5</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">2</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">서울</a></td>
+                      <td><a href="#" class="rotate-text">염치읍</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">3</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">4</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">부산</a></td>
+                      <td><a href="#" class="rotate-text">배방읍</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">6</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">1</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">인천</a></td>
+                      <td><a href="#" class="rotate-text">송악면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">4</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">3</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">대구</a></td>
+                      <td><a href="#" class="rotate-text">음봉면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">2</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">5</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">광주</a></td>
+                      <td><a href="#" class="rotate-text">둔포면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">7</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">2</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">대전</a></td>
+                      <td><a href="#" class="rotate-text">영인면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">1</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">6</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">울산</a></td>
+                      <td><a href="#" class="rotate-text">인주면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">5</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">3</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">세종</a></td>
+                      <td><a href="#" class="rotate-text">선장면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">3</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">4</td>
                     </tr>
                     <tr>
-                      <td><a href="#" class="rotate-text">제주</a></td>
+                      <td><a href="#" class="rotate-text">도고면</a></td>
                       <td><img src="assets/img/add/dangerou.svg" class="State-icon">4</td>
+                      <td><img src="assets/img/add/caution.svg" class="State-icon">2</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#" class="rotate-text">신창면</a></td>
+                      <td><img src="assets/img/add/dangerou.svg" class="State-icon">1</td>
                       <td><img src="assets/img/add/caution.svg" class="State-icon">2</td>
                     </tr>
                   </tbody>
@@ -693,7 +676,9 @@
 
               </div>
             </div>
+
           </div>
+
 
           <!-- Right side columns -->
           <div class="col-lg-15 parent-element">
@@ -719,11 +704,13 @@
                   <div class="card-body">
                     <h5 class="card-title">실시간 CCTV <span>| Today</span></h5>
                     <div class="grid-container">
-                      <div class="grid-item">アイテム 1, 2, 5, 6</div>
-                      <div class="grid-item">アイテム 3</div>
+                      <div class="grid-item">アイテム 1, 2, 5, 6
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7A5MJw9AFcQ?si=N8LVj_ihw-_SORvh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      </div>
+                      <!-- <div class="grid-item">アイテム 3</div>
                       <div class="grid-item">アイテム 4</div>
                       <div class="grid-item">アイテム 7</div>
-                      <div class="grid-item">アイテム 8</div>
+                      <div class="grid-item">アイテム 8</div> -->
                     </div>
 
                   </div>
@@ -732,7 +719,7 @@
 
               <!-- Reports -->
               <div class="col-12" id="mapBox">
-                <div class="card">
+                <div class="card recent-sales">
 
                   <div class="filter">
                     <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -750,9 +737,6 @@
                   <div class="card-body">
                     <h5 class="card-title">지도 <span>/Today</span></h5>
                     <div class="map-canvas"></div>
-
-                    <!-- End Line Chart -->
-
                   </div>
 
                 </div>
@@ -767,20 +751,6 @@
 
   </main><!-- End #main -->
 
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
@@ -797,7 +767,15 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+  <!-- 추가한 js 파일 -->
   <script src="assets/js/density/density_map.js"></script>
+  <!-- map link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx1xUEgJ3-t-NUb5kiXgFTysReX_BVf4c&callback=initMap"></script>
+  <script src="assets/js/density/map_scripts__02.js"></script>
 
 </body>
 
