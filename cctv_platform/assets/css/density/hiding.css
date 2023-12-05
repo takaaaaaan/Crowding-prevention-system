@@ -1,0 +1,24 @@
+.boxbox {
+  position: relative;
+  /* 필요에 따라 boxbox의 크기를 설정 */
+}
+
+.hiding-box-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 58px; /* 가리고 싶은 영역의 높이 */
+  background-color: white; /* 배경색은 iframe과 매치시키거나, 원하는 색상으로 설정 */
+  z-index: 10; /* iframe 위에 표시되도록 z-index 설정 */
+}
+
+.hiding-box-down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px; /* 가리고 싶은 영역의 높이 */
+  background-color: white; /* 배경색은 iframe과 매치시키거나, 원하는 색상으로 설정 */
+  z-index: 10; /* iframe 위에 표시되도록 z-index 설정 */
+}
