@@ -1,0 +1,197 @@
+#componentBox, #chartBox {
+  padding: 2%;
+  background-color: rgb(255, 250, 245);
+}
+
+#columnChartEE {
+  height: 10px;
+}
+
+.col-lg-13 {
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+/* 기존의 keyframes에 추가 */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-in-bottom {
+  animation: 1.0s ease-out 0s 1 slideInFromBottom;
+}
+
+.slide-in-left {
+  animation: 1.0s ease-out 0s 1 slideInFromLeft;
+}
+
+.slide-in-top {
+  animation: 1.0s ease-out 0s 1 slideInFromTop;
+}
+
+
+/* 부모 요소 안에서만 애니매이션이 동작되도록 */
+.parent-element {
+  overflow: hidden;
+  flex-wrap: wrap; /* 여러 항목이 있는 경우 접기 */
+  align-items: stretch; /* 모든 자식 요소를 상위 요소와 같은 높이로 만듭니다 */
+}
+
+.recent-sales {
+  height: 95.5%;
+}
+
+
+.mini-box img {
+  width: 100%;  /* 박스의 전체 너비를 차지하도록 설정 */
+  height: 100%; /* 박스의 전체 높이를 차지하도록 설정 */
+  object-fit: cover; /* 이미지가 박스에 맞춰서 잘리지 않고 비율을 유지하면서 채워지도록 설정 */
+}
+
+
+/* .table-hover tbody tr:hover, .mini-box {
+  cursor: pointer;
+} */
+
+
+
+/* 그리드 컨테이너 설정 */
+.grid-container {
+  height: 360px;
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px; */
+}
+
+/* 그리드 아이템의 공통 스타일 */
+.grid-item {
+  border: 1px solid black; /* 그리드 아이템의 경계선 */
+  padding: 20px; /* 내부 여백 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+/* 1, 2, 5, 6번째 아이템을 결합하기 위한 특별한 스타일 */
+.grid-item:first-child {
+  grid-row: 1 / 3; /* 1행부터 2행까지 차지 */
+  grid-column: 1 / 3; /* 1열부터 2열까지 차지 */
+  height: 100%; /* 높이를 2행 분량으로 설정 */
+}
+.custom-box {
+  width: 100%; /* 너비를 100%로 설정 */
+  height: 280px; /* 높이를 320px로 설정 */
+  background-color: #f1f1f1; /* 배경색 */
+  padding: 20px; /* 내부 패딩 */
+  margin-bottom: 20px; /* 아래쪽 여백 */
+  /* 추가 스타일은 여기에 */
+}
+.slider-container {
+  position: relative; /* 버튼 위치 조정을 위해 */
+  margin-bottom: 50px;
+}
+
+.mini-box-container {
+  display: flex;
+  overflow-x: hidden; /* 가로 스크롤 숨기기 */
+  gap: 10px;
+  scroll-behavior: smooth; /* 스크롤 애니메이션 */
+}
+
+.mini-box {
+  flex: 0 0 60px; /* flex-grow를 0으로 설정하고, 박스의 너비를 60px로 고정 */
+  height: 60px; /* 높이를 60px로 설정 */
+  background-color: #f1f1f1; /* 배경색 */
+  padding: 10px; /* 패딩 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  /* 추가 스타일은 여기에 */
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(221, 221, 221, 0.5); /* 반투명 배경색 */
+  color: #000; /* 버튼 텍스트 색상 */
+  border: none;
+  opacity: 1; /* 버튼 전체의 투명도 설정을 불투명으로 */
+  height: 60px; /* 미니 박스와 동일한 높이 */
+  /* 추가 스타일 */
+}
+
+.prev-btn {
+  left: 0;
+  width: 30px; /* 이전 버튼의 너비 */
+}
+
+.next-btn {
+  right: 0;
+  width: 30px; /* 다음 버튼의 너비 */
+}
+
+.col-lg-13 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+.col-lg-14 {
+  flex: 0 0 auto;
+  display: flex;
+  width: 30%;
+}
+.col-lg-15 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+th span {
+  display: block; /* 블록 레벨 요소로 표시 */
+}
+
+
+.rotate-text {
+  display: block; /* 블록 레벨 요소로 표시 */
+  white-space: nowrap; /* 텍스트를 줄바꿈하지 않음 */
+  min-width: 100%; /* 셀의 최소 너비 설정 */
+}
+
+/* SVG 아이콘과 숫자를 포함하는 요소에 적용 */
+.icon-with-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* 아이템 간 간격 지정 */
+}
+
+/* SVG 아이콘 스타일 */
+.State-icon {
+  width: 24px; /* 아이콘의 너비 */
+  height: 24px; /* 아이콘의 높이 */
+  margin-left: 5px; /* 왼쪽 여백 */
+  margin-bottom: 5px; /* 아래쪽 여백 */
+  margin-right: 5px; /* 오른쪽 여백 */
+}

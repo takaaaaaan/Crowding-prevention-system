@@ -1,0 +1,10 @@
+.table-hover tbody tr:hover {
+    cursor: pointer;
+}
+
+#componentBox, #chartBox {
+    padding: 2%;
+    background-color: rgb(255, 250, 245);
+}
+
+
