@@ -1,0 +1,150 @@
+.col-lg-19 {
+  flex: 0 0 auto;
+  width: 15%;
+}
+.col-lg-20 {
+  flex: 0 0 auto;
+  width: 60%;
+}
+
+.main .search-form {
+  width: 100%;
+}
+
+.main .search-form input {
+  border: 0;
+  font-size: 14px;
+  color: #012970;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  padding: 7px 38px 7px 8px;
+  border-radius: 3px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.main .search-form input:focus,
+.main .search-form input:hover {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
+  border: 1px solid rgba(1, 41, 112, 0.3);
+}
+
+.main .search-form button {
+  border: 0;
+  padding: 0;
+  margin-left: -30px;
+  background: none;
+}
+
+.main .search-form button i {
+  color: #012970;
+}
+
+
+
+.card_no {
+  margin-bottom: 20px;
+  background-color: #ffff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+
+.card-title-custom {
+  padding: 10px 0 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+}
+
+.Folder_Icon{
+  width: 30px !important;
+  height: 30px !important;
+}
+.alert{
+  padding: 5px;
+}
+.alert-dismissible {
+  padding-right: 3rem;
+}
+.alert-dismissible .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.8rem 1rem;
+}
+.btn-close {
+  --bs-btn-close-color: #000;
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  --bs-btn-close-opacity: 0.5;
+  --bs-btn-close-hover-opacity: 0.75;
+  --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --bs-btn-close-focus-opacity: 1;
+  --bs-btn-close-disabled-opacity: 0.25;
+  --bs-btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+  box-sizing: content-box;
+  padding: 0.25em 0.25em;
+  color: var(--bs-btn-close-color);
+  background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.375rem;
+  opacity: var(--bs-btn-close-opacity);
+}
+
+
+.index-card {
+  position: relative; /* 親要素を相対位置に設定 */
+}
+
+.btn-save-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: border 0.3s, box-shadow 0.3s; /* 테두리와 박스 그림자에 대한 부드러운 전환 효과 */
+}
+
+.btn-save-text:hover {
+  box-shadow: 0 0 15px rgba(70, 255, 255, 0.6); /* 추가 야광 효과 */
+  cursor: pointer;
+}
+
+
+
+.youtube {
+  height: calc(600px - 50px); /* iframeの高さを親要素からhiding-box-upの高さ分減らす */
+}
+
+.boxbox {
+  position: relative;
+  overflow: hidden; /* 隠れた部分を非表示にする */
+  /* 필요에 따라 boxbox의 크기를 설정 */
+}
+.hiding-box-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px; /* 가리고 싶은 영역의 높이 */
+  background-color: white; /* 배경색은 iframe과 매치시키거나, 원하는 색상으로 설정 */
+  z-index: 10; /* iframe 위에 표시되도록 z-index 설정 */
+}
+.hiding-box-down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px; /* 가리고 싶은 영역의 높이 */
+  background-color: white; /* 배경색은 iframe과 매치시키거나, 원하는 색상으로 설정 */
+  z-index: 10; /* iframe 위에 표시되도록 z-index 설정 */
+}

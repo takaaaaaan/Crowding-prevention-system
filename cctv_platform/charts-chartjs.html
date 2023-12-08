@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>쓰러짐 감지</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- 우리팀 CSS -->
+    <link href="assets/css/gg_map.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/VIolence.css" />
+    <link rel="stylesheet" href="assets/css/common_style.css" />
+    <!-- map link -->
+    <link rel="stylesheet" href="input_html/css/map_styles.css" />
+    <!-- CSSのリンクを追加（必要であれば） -->
+    <!-- <link rel="stylesheet" href="input_html/css/snazzy-info-window.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script src="input_html/js/snazzy-info-window.min.js"></script> -->
+    <script src="input_html/js/map_scripts__02.js"></script>
+
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">Wadmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span> </a
+            ><!-- End Notification Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
+            >
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span> </a
+            ><!-- End Messages Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages"
+            >
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"
+                  ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                    >View all</span
+                  ></a
+                >
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-1.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-2.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img
+                    src="assets/img/messages-3.jpg"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>
+                      Velit asperiores et ducimus soluta repudiandae labore
+                      officia est ut...
+                    </p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+            </ul>
+            <!-- End Messages Dropdown Items -->
+          </li>
+          <!-- End Messages Nav -->
+
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>사용자 정의 객체</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#components-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-menu-button-wide"></i><span>군중 밀집도</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="components-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <a href="components-tooltips.html">
+                <i class="bi bi-circle"></i><span>지도 및 카메라</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-progress.html">
+                <i class="bi bi-circle"></i><span>자료 분석</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="forms-elements.html">
+            <i class="bi bi-journal-text"></i><span>야생동물</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="tables-general.html">
+            <i class="bi bi-journal-text"></i><span>전동 킥보드</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="charts-chartjs.html">
+            <i class="bi bi-journal-text"></i><span>쓰러짐</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="icons-bootstrap.html">
+            <i class="bi bi-journal-text"></i><span>폭력 행위</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="container_02">
+        <!-- pagetitle 60% 너비 -->
+        <div class="pagetitle">
+          <h1>쓰러짐</h1>
+          <nav>
+            <!-- breadcrumb 네비게이션 -->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">Wadmin</li>
+              <li class="breadcrumb-item active">쓰러짐</li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="new-container">
+          <div class="card info-card sales-card fall-inform">
+            <div class="custom-info-box">
+              <div class="info-item">
+                <div class="image-text-container">
+                  <img src="assets/img/R_Siren.png" alt="위험" />
+                  <span>위험 1건</span>
+                </div>
+                <span class="additional-text">10분 이상</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card info-card sales-card fall-inform">
+            <div class="custom-info-box">
+              <div class="info-item">
+                <div class="image-text-container">
+                  <img src="assets/img/Y_Siren.png" alt="경고" />
+                  <span>경고 1건</span>
+                </div>
+                <span class="additional-text">5분 이상</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card info-card sales-card fall-inform">
+            <div class="custom-info-box">
+              <div class="info-item">
+                <div class="image-text-container">
+                  <img src="assets/img/G_Siren.png" alt="주의" />
+                  <span>주의 1건</span>
+                </div>
+                <span class="additional-text">1분 이상</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Container -->
+
+      <section class="section dashboard">
+        <div class="row">
+          <div class="col-lg-4 parent-element">
+            <div class="card">
+              <!-- 신고하기 -->
+              <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li><a class="dropdown-item" href="#">신고하기</a></li>
+                </ul>
+              </div>
+              
+              <div class="card-body pb-0">
+                <h5 class="card-title">
+                  쓰러짐 감지 &amp; 사진 <span>| Today</span>
+                </h5>
+                <div class="custom-box" id="customBox"></div>
+                <div class="slider-container">
+                  <button class="slide-btn prev-btn">＜</button>
+                  <div class="mini-box-container">
+                    <!-- 이미지를 여기에 추가합니다. 예를 들어, 아래와 같이 할 수 있습니다: -->
+                    <!-- <div
+                      class="mini-box"
+                      style="
+                        background-image: url('assets/Violence_img/12-1.png');
+                      "
+                    ></div> -->
+                    <div class="mini-box">
+                      <img src="assets/Violence_img/12-1.png" alt="Image">
+                    </div>
+                  
+                    <div
+                      class="mini-box"
+                      style="
+                        background-image: url('assets/Violence_img/12-2.png');
+                      "
+                    ></div>
+                    <div
+                      class="mini-box"
+                      style="
+                        background-image: url('assets/Violence_img/12-3.png');
+                      "
+                    ></div>
+                    <div
+                      class="mini-box"
+                      style="
+                        background-image: url('assets/Violence_img/12-4.png');
+                      "
+                    ></div>
+                    <div
+                      class="mini-box"
+                      style="
+                        background-image: url('assets/Violence_img/12-5.png');
+                      "
+                    ></div>
+                    <!-- 더 많은 mini-box를 추가할 수 있습니다 -->
+                  </div>
+                  <button class="slide-btn next-btn">＞</button>
+                </div>
+                <script>
+                  document
+                    .querySelector(".prev-btn")
+                    .addEventListener("click", function () {
+                      document.querySelector(".mini-box-container").scrollBy({
+                        left: -60, // 60px分左にスクロール（1ボックス分）
+                        behavior: "smooth",
+                      });
+                    });
+
+                  document
+                    .querySelector(".next-btn")
+                    .addEventListener("click", function () {
+                      document.querySelector(".mini-box-container").scrollBy({
+                        left: 60, // 60px分右にスクロール（1ボックス分）
+                        behavior: "smooth",
+                      });
+                    });
+                </script>
+                <table class="table table-borderless datatable">
+                  <thead>
+                    <tr>
+                      <th scope="col">케이스</th>
+                      <th scope="col">시간</th>
+                      <th scope="col">상태</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Case 1</td>
+                      <td>18:14:32</td>
+                      <td><span class="badge bg-danger">10분 이상</span></td>
+                    </tr>
+                    <tr>
+                      <td>Case 2</td>
+                      <td>18:13:58</td>
+                      <td><span class="badge bg-success">1분 이상</span></td>
+                    </tr>
+                    <tr>
+                      <td>Case 3</td>
+                      <td>18:19:35</td>
+                      <td><span class="badge bg-warning">5분 이상</span></td>
+                    </tr>
+                    <!-- 追加の行 -->
+                  </tbody>
+                </table>
+
+                <!-- End sidebar recent posts-->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side cctv, map -->
+          <div class="col-lg-8 parent-element">
+            <div class="row">
+              <!-- cctv -->
+              <div class="col-12" id="cctvBox">
+                <div class="card recent-sales overflow-auto">
+                  <div class="card-body">
+                    <h5 class="card-title">감지 영상 <span>| Today</span></h5>
+                    <!-- cctv 영상 -->
+                    <div class="grid-container_V">
+                      <div class="grid-item_V">
+                        <video
+                          
+                          data-lat="37.5665"
+                          data-lng="126.9780"
+                          data-mini-image="assets/img/fall1-1.png, assets/img/fall1-2.png, assets/img/fall1-3.png">
+                          <source src="assets/video/fall1.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      <div class="grid-item_V">
+                        <video
+                          
+                          data-lat="37.5655"
+                          data-lng="126.9780"
+                          data-mini-image="assets/img/fall2-1.png, assets/img/fall2-2.png, assets/img/fall2-3.png, assets/img/fall2-4.png"
+                        >
+                          <source src="./assets/video/fall2.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      <div class="grid-item_V">
+                        <video
+                          
+                          data-lat="37.5635"
+                          data-lng="126.9791"
+                          data-mini-image="assets/img/fall3-1.png, assets/img/fall3-2.png, assets/img/fall3-3.png, assets/img/fall3-4.png, assets/img/fall3-5.png"
+                        >
+                          <source src="assets/video/fall3.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- map -->
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      지도 <span>| Today</span>
+                    </h5>
+                    <div id="googleMap" style="width: 100%; height: 400px" class="map-canvas"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- End Right side columns -->
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+    
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        Made by
+        <strong><span>우에노고홍,안지성,서형준,임호진,석희성 </span></strong
+        >.선문대학교 몰입형 12분반
+      </div>
+      <div class="credits">Designed by <b>Wadmin</b></div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="assets/js/V_map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNjVDOdFe-mnveSikuzMzPqej-RiOP8Mc&callback=initMap"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/Violence.js"></script>
+    <!-- <script type="module" src="assets/js/firebase_module.js"></script> -->
+  </body>
+</html>
