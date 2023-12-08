@@ -1,0 +1,34 @@
+.table-hover tbody tr:hover, .mini-box {
+    cursor: pointer;
+}
+
+.custom-box, .grid-item, .map-canvas, .mini-box, .grid-item_V {
+    border-radius: 10px; /* 테두리를 둥글게 만들기 위한 값 */
+    border: 1px solid rgb(159, 159, 159);
+}
+
+.custom-box img, iframe, .mini-box img, .grid-item_V video, #waiting {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.custom_table tr:first-child td {
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+.custom_table tr:last-child td {
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+tbody td {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+}
+
+iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
