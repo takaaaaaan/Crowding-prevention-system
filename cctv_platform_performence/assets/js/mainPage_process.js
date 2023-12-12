@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getDatabase, ref, set, remove, get, push } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+import { getDatabase, ref, onValue, set, remove, get, push } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
 import { getStorage, ref as storageRef, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
 
 // Firebase configuration
@@ -25,9 +25,9 @@ const database = getDatabase(app);
 document.addEventListener("DOMContentLoaded", () => {
   // "Main" 섹션에 대한 참조 생성
   const mainRef = ref(database, "Main");
-  const storage = getStorage(); // Firebase Storage 인스턴스 가져오기
+  // const storage = getStorage(); // Firebase Storage 인스턴스 가져오기
   // const imagesRef = storageRef(storage, `/MainObject/${cardText}/`);  // Firebase Storage에서 동적으로 경로 설정
-  const imagesRef = storageRef(storage, `/MainObject/computer/`);
+  // const imagesRef = storageRef(storage, `/MainObject/computer/`);
 
   // 처음에 맵 시야에서 안보여줬다가 클릭 시 보여줌(보여주기식)
   var mapC = document.querySelector('.map-canvas');
@@ -175,7 +175,44 @@ document.addEventListener("DOMContentLoaded", () => {
       iframe.src = "https://www.youtube.com/embed/xEdizb8xpCs?autoplay=1&si=xLkDsU5TS4uNgsiO&amp;clip=UgkxtRJeP02mHMZundPVVzxmU2yKFq3JhtX1&amp;clipt=EJC_BRjwkwk";
       
 
-      setInterval(refreshImages, 5000);
+      const main_imgRef = ref(database, "Main_image");
+
+      onValue(main_imgRef, (snapshot) => {
+        const urls = [];
+        snapshot.forEach(childSnapshot => {
+          const url = childSnapshot.val().url; // 'url' 노드에서 URL을 가져옴
+          urls.unshift(url); // 배열의 시작 부분에 URL을 추가
+          console.log(url);
+        });
+
+        // 최신 7개의 이미지만 선택
+        const latestUrls = urls.slice(0, 7);
+
+        const miniBoxes = document.querySelectorAll('.mini-box');
+
+        // mini-box 요소 초기화
+        miniBoxes.forEach(box => {
+          while (box.firstChild) {
+            box.removeChild(box.firstChild);
+          }
+        });
+
+        // mini-box에 이미지 추가
+        latestUrls.forEach((url, index) => {
+          if (index < miniBoxes.length) {
+            const img = document.createElement('img');
+            img.src = url;
+            miniBoxes[index].appendChild(img);
+
+            // 클릭 이벤트 리스너 추가
+            miniBoxes[index].addEventListener('click', function() {
+              showImageInCustomBox(url);
+            });
+          }
+        });
+      }, (error) => {
+        console.error('데이터를 가져오는 중 오류 발생:', error);
+      });
 
     });
   }
@@ -193,45 +230,5 @@ document.addEventListener("DOMContentLoaded", () => {
     customBox.innerHTML = ''; // 기존 내용을 비우고
     customBox.appendChild(img); // 새 이미지 삽입
   }
-
-
-  function refreshImages() {
-    listAll(imagesRef)
-      .then((res) => {
-        const latestImages = res.items.slice(0, 7);
-        const miniBoxes = document.querySelectorAll('.mini-box');
-  
-        // mini-box 요소 초기화
-        miniBoxes.forEach(box => {
-          while (box.firstChild) {
-            box.removeChild(box.firstChild);
-          }
-        });
-  
-        // mini-box에 이미지 추가
-        Promise.all(latestImages.map(imageRef => getDownloadURL(imageRef)))
-          .then(urls => {
-            urls.forEach((url, index) => {
-              if (index < miniBoxes.length) {
-                const img = document.createElement('img');
-                img.src = url;
-                miniBoxes[index].appendChild(img);
-  
-                // 클릭 이벤트 리스너 추가
-                miniBoxes[index].addEventListener('click', function() {
-                  showImageInCustomBox(url);
-                });
-              }
-            });
-          })
-          .catch(error => {
-            console.error('이미지 URL을 가져오는 중 오류 발생:', error);
-          });
-      })
-      .catch((error) => {
-        console.error('Storage에서 파일 목록을 가져오는 중 오류 발생:', error);
-      });
-  }
-
 
 });
