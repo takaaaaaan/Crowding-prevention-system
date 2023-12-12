@@ -1,0 +1,15 @@
+.new-container {
+  width: 67.4%;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.pagetitle {
+  width: 32.6%;
+}
+.fall-inform {
+  margin-bottom: 25px;
+}
+
+.container_02{
+  display: flex;
+}
