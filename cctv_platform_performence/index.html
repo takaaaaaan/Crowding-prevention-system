@@ -162,7 +162,7 @@
                 <h5 class="card-title">객체 등록<span> | Today</span></h5>
                 <div class="search-bar">
                   <form class="search-form d-flex align-items-center" id="groundingDinoForm">
-                    <input type="text" id="inputText" name="target_objects" placeholder="타겟 객체: 객체 입력 후 엔터"/>
+                    <input type="text" id="inputText" name="target_objects" autocomplete="off" placeholder="타겟 객체: 객체 입력 후 엔터"/>
                   </form>
                 </div>
               </div>
@@ -219,12 +219,13 @@
               <div class="card-body">
                 <h5 class="card-title">실시간 CCTV<span> | Today</span></h5>
                 <div class="boxbox">
-                  <!-- <div class="hiding-box-up"></div> -->
+                  <div class="hiding-box-up"></div>
                   <video id="waiting" muted>
                     <source  src="assets/video/loading.mp4" type="video/mp4">
                   </video>
-                  <iframe id="stream-iframe" type="text/html" class="youtube" src="https://www.youtube.com/embed/LiOViqGfzkg?autoplay=1&si=xeMfxIsnwoxd2qey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  <!-- <div class="hiding-box-down"></div> -->
+                  <iframe id="stream-iframe" type="text/html" class="youtube" src="https://www.youtube.com/embed/xEdizb8xpCs?autoplay=1&si=xLkDsU5TS4uNgsiO&amp;clip=UgkxtRJeP02mHMZundPVVzxmU2yKFq3JhtX1&amp;clipt=EJC_BRjwkwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <!-- <iframe id="stream-iframe" type="text/html" class="youtube" src="https://www.youtube.com/embed/LiOViqGfzkg?autoplay=1&si=xeMfxIsnwoxd2qey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                  <div class="hiding-box-down"></div>
                 </div>
               </div>
             </div>

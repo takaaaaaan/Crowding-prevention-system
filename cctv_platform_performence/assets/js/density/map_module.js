@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // iframe에 소스 설정
     var iframe = document.getElementById('stream-iframe');
-    iframe.src = "https://www.youtube.com/embed/wnLaIAiunH8?autoplay=1&si=CpyQIeakC0o5s1UA";
+    iframe.src = "https://www.youtube.com/embed/2h4jYNRqZG0?autoplay=1&si=hde4GgmrPPZnpXPQ";
 
     const densityRef = ref(database, 'Density/' + '송악면' + '/' + '와차웃 기차역');
     // 데이터 저장을 위한 배열
@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // 최신 데이터의 URL을 사용하여 각 mini-box에 이미지 삽입
       latestData.forEach((data, index) => {
         if (miniBoxes[index]) {
-          if (index === 0) {
-            // 가장 최신 이미지를 custom-box에 표시
-            showImageInCustomBox(data.url);
-          }
+          // if (index === 0) {
+          //   // 가장 최신 이미지를 custom-box에 표시
+          //   showImageInCustomBox(data.url);
+          // }
           // <img> 요소 생성
           var img = document.createElement('img');
           img.src = data.url; // URL 설정

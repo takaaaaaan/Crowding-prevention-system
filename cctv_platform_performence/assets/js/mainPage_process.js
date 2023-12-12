@@ -25,6 +25,9 @@ const database = getDatabase(app);
 document.addEventListener("DOMContentLoaded", () => {
   // "Main" 섹션에 대한 참조 생성
   const mainRef = ref(database, "Main");
+  const storage = getStorage(); // Firebase Storage 인스턴스 가져오기
+  // const imagesRef = storageRef(storage, `/MainObject/${cardText}/`);  // Firebase Storage에서 동적으로 경로 설정
+  const imagesRef = storageRef(storage, `/MainObject/computer/`);
 
   // 처음에 맵 시야에서 안보여줬다가 클릭 시 보여줌(보여주기식)
   var mapC = document.querySelector('.map-canvas');
@@ -48,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 로딩 비디오가 끝나면 stream이 보이게 설정
   document.getElementById('waiting').addEventListener('ended', function() {
     this.style.display = 'none'; // 비디오를 숨깁니다.
-    document.getElementById('stream-iframe').style.display = 'block'; // iframe을 보이게 합니다.
+    setTimeout(function() {
+      document.getElementById('stream-iframe').style.display = 'block'; // iframe을 보이게 합니다.
+    }, 2000);
   });
   
 
@@ -155,8 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // db의 특정 폴더 최신 7개 이미지 mini-box에 삽입
     newCard.querySelector('.btn-save-text').addEventListener('click', function() {
-      const storage = getStorage(); // Firebase Storage 인스턴스 가져오기
-      const imagesRef = storageRef(storage, `/MainObject/${cardText}/`);  // Firebase Storage에서 동적으로 경로 설정
+      
       
       // 맵 다시 보여주기
       mapC.style.visibility = 'visible';
@@ -168,57 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // iframe에 소스 설정
       var iframe = document.getElementById('stream-iframe');
-      iframe.src = "https://www.youtube.com/embed/LiOViqGfzkg?autoplay=1&si=xeMfxIsnwoxd2qey";
+      iframe.src = "https://www.youtube.com/embed/xEdizb8xpCs?autoplay=1&si=xLkDsU5TS4uNgsiO&amp;clip=UgkxtRJeP02mHMZundPVVzxmU2yKFq3JhtX1&amp;clipt=EJC_BRjwkwk";
       
 
-      listAll(imagesRef)
-        .then((res) => {
-          const latestImages = res.items.slice(0, 7);
-          const miniBoxes = document.querySelectorAll('.mini-box'); // 모든 mini-box 요소 선택
-
-          // mini-box 클릭 시 custom-box에 이미지 표시하는 로직 추가
-          Promise.all(latestImages.map(imageRef => getDownloadURL(imageRef)))
-            .then(urls => {
-              urls.forEach((url, index) => {
-                if (index < miniBoxes.length) {
-                  const img = document.createElement('img');
-                  img.src = url;
-                  miniBoxes[index].appendChild(img);
-
-                  // 클릭 이벤트 리스너 추가
-                  miniBoxes[index].addEventListener('click', function() {
-                    showImageInCustomBox(url); // 여기서 'url'은 해당 이미지의 URL입니다.
-                  });
-                }
-              });
-            })
-            .catch(error => {
-              console.error('이미지 URL을 가져오는 중 오류 발생:', error);
-            });
-
-
-          // 각 mini-box에 이미지를 차례대로 삽입
-          latestImages.forEach((imageRef, index) => {
-            getDownloadURL(imageRef)
-              .then((url) => {
-                if (index === 0) {
-                  // 가장 최신 이미지를 custom-box에 표시
-                  showImageInCustomBox(url);
-                }
-                if (index < miniBoxes.length) {
-                  const img = document.createElement('img');
-                  img.src = url;
-                  miniBoxes[index].appendChild(img);
-                }
-              })
-              .catch((error) => {
-                console.error('이미지 URL을 가져오는 중 오류 발생:', error);
-              });
-          });
-        })
-        .catch((error) => {
-          console.error('Storage에서 파일 목록을 가져오는 중 오류 발생:', error);
-        });
+      setInterval(refreshImages, 5000);
 
     });
   }
@@ -235,6 +192,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     customBox.innerHTML = ''; // 기존 내용을 비우고
     customBox.appendChild(img); // 새 이미지 삽입
+  }
+
+
+  function refreshImages() {
+    listAll(imagesRef)
+      .then((res) => {
+        const latestImages = res.items.slice(0, 7);
+        const miniBoxes = document.querySelectorAll('.mini-box');
+  
+        // mini-box 요소 초기화
+        miniBoxes.forEach(box => {
+          while (box.firstChild) {
+            box.removeChild(box.firstChild);
+          }
+        });
+  
+        // mini-box에 이미지 추가
+        Promise.all(latestImages.map(imageRef => getDownloadURL(imageRef)))
+          .then(urls => {
+            urls.forEach((url, index) => {
+              if (index < miniBoxes.length) {
+                const img = document.createElement('img');
+                img.src = url;
+                miniBoxes[index].appendChild(img);
+  
+                // 클릭 이벤트 리스너 추가
+                miniBoxes[index].addEventListener('click', function() {
+                  showImageInCustomBox(url);
+                });
+              }
+            });
+          })
+          .catch(error => {
+            console.error('이미지 URL을 가져오는 중 오류 발생:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Storage에서 파일 목록을 가져오는 중 오류 발생:', error);
+      });
   }
 
 
